@@ -1,4 +1,4 @@
-## Welcome to GitHub Pages
+## Welcome to Joshua McNew's ePortfolio
 
 You can use the [editor on GitHub](https://github.com/iMcNeW/SNHU_CS499/edit/main/README.md) to maintain and preview the content for your website in Markdown files.
 
