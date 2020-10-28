@@ -28,6 +28,7 @@ I chose this artifact because the enhancements I made helped me demonstrate the 
 To add the functionality that allows a user to re-print their role wasn’t to challenging. I had to add an else if to the if else statement inside of the while loop at the end of the program that called the getRole() function if the user typed “role”.  The biggest challenged I faced when enhancing this program was figuring out when and where to close the scanner to fix the resource leak. I tried to close it in a few different places within the code, but the program would eventually crash when it required user input after the scanner was closed. I eventually figured out that if I closed the scanner at the end of the first for loop the program functioned properly and let the user continue to re-print their role or logout if they wish. Improving the comments and straightening up the structure of the code was pretty straightforward and fairly easy to accomplish because I now have a better understanding of coding best practices in regards to naming conventions, comments, and how code should be structured to improve readability and understandability. 
 
 **Artifact One Enhanced Code**
+- [Link to full project code] (https://github.com/iMcNeW/SNHU_CS499/tree/main/ZooAuthenticationSystem/src/zooauthenticationsystem)
 ```java
 package zooauthenticationsystem;
 import java.security.MessageDigest;
