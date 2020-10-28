@@ -23,3 +23,17 @@ The goal of this code review is to explain how the code for each of my chosen ar
 ```java
 
 ```
+
+# Artifact 2 - Algorithms and Data Structures
+
+**Artifact 1**
+```c++
+
+```
+
+# Artifact 3 - Databases
+
+**Artifact 1**
+```python
+
+```
