@@ -188,8 +188,8 @@ To enhance this artifact, I converted all four of these programs into one progra
 
 These enhancements were pretty intense, but I completed something very similar in a course I took sometime a while back and I believe this program is much more efficient and usable than it was before. I’d say the biggest lesson learned from this enhancement is that you can pretty much combine any program into one as long as you include a main menu that can call them. I find this much more efficient than developing one long C++ file that contains all of the required code. Having the four data structures and algorithms in separate files makes them much more efficient, readable, and understandable. 
  
-References
-Lysecky, R. (2017, August). CS-260: Data Structures
+**References**
+- Lysecky, R. (2017, August). CS-260: Data Structures
 
 
 **Artifact Two Enhanced Code**
