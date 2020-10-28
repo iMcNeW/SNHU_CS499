@@ -172,16 +172,20 @@ public class ZooAuthenticationSystem {
 }
 ```
 
-# Artifact 2 - Algorithms and Data Structures
+# Artifact Two - Algorithms and Data Structures
 
-**Artifact 1**
+**Artifact Two Narrative**
+
+**Artifact Two Enhanced Code**
 ```c++
 
 ```
 
-# Artifact 3 - Databases
+# Artifact Three - Databases
 
-**Artifact 1**
+**Artifact Three Narrative**
+
+**Artifact Artifact Three Enhanced Code**
 ```python
 
 ```
