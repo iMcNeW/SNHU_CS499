@@ -5,3 +5,4 @@ description: CS499 Computer Science Capstone
 # SITE CONFIGURATION
 baseurl: ""
 url: "https://iMcNeW.github.io"
+markdown: kramdown kramdown: parse_block_html: true
