@@ -180,7 +180,7 @@ public class ZooAuthenticationSystem {
 </details>
 
 <details>
-<summary><b>Click to view ZooUserRoles.Java</b></summary>
+<summary><b>ZooUserRoles.Java</b></summary>
 
 ```java
 
@@ -208,9 +208,13 @@ These enhancements were pretty intense, but I completed something very similar i
 **Artifact Two Enhanced Code** 
 - [Link to full project code](https://github.com/iMcNeW/SNHU_CS499/tree/main/ZooAuthenticationSystem/src/zooauthenticationsystem).
 
+<details>
+    <summary><b>Click to view</b></summary>
+
 ```c++
 
 ```
+</details>
 
 # Artifact Three - Databases
 
@@ -219,6 +223,11 @@ These enhancements were pretty intense, but I completed something very similar i
 **Artifact Artifact Three Enhanced Code**
 - [Link to full project code](https://github.com/iMcNeW/SNHU_CS499/tree/main/ZooAuthenticationSystem/src/zooauthenticationsystem).
 
+<details>
+    <summary><b>Click to view</b></summary>
+
 ```python
 
 ```
+</details>
+
