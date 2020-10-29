@@ -267,6 +267,13 @@ These enhancements were pretty intense, but I completed something very similar i
 
 **Artifact Three Narrative**
 
+The artifact that I enhanced for the databases aspect of the ePortfolio is also a culmination of four different programs written in Python that I developed in the CS 340 Advanced Programming Concepts course in July 2020. I developed these four programs to complete Milestone One of this course and they are responsible for implementing the fundamental operations of create, read, update, and delete (CRUD) on a document collection inside of a MongoDB database. For this assignment, I was not sure if all the operations were supposed to be in one Python file. I tried forever to get it to work inside of one, but ultimately could not figure out how to implement it and eventually had to create a separate Python file for each CRUD operation. Each of these programs perform their specific CRUD operation on a specific hard-coded document inside of the database.
+	
+I chose this artifact because the enhancements I made helped me demonstrate the mastery in some of the skills I have learned throughout my journey in this computer science program. I proved my ability to use well-founded and innovative techniques to develop a secure program that allows a user to perform CRUD operations on a document inside of a MongoDB document database. I certainly met my course objectives for this enhancement because I demonstrated my ability to improve the efficiency of four separate programs by expanding their complexity and converting them into one fully functional program that has an intuitive main menu that allows a user to perform CRUD operations on a document of their choosing. I ensured the program validated and converted user input because not doing so could lead to potential security vulnerabilities. I improved the overall quality of the code by using proper naming conventions, straightening up the structure of the code, and adding sophisticated comments that help explain how the code functions. These enhancements made the program much more efficient, secure, and understandable from a programmer's point of view. 
+
+To enhance this artifact, I successfully converted all four of these programs into one program that has a main menu that gives the user an option to perform CRUD operations on a document of their choosing. The user is able to create their own document, search for a specific document, update specific documents, and delete specific documents using the documents ID. I’d say the most challenging part of this enhancement was actually allowing the user to create and update a document because these two methods were hard coded to perform these operations on a specific document before, all I had to do was run the program. After combining all four programs, I decided the best option was to continually prompt the user to enter the required information, store the input in a variable, then either create or update the document. After some research on Python, I learned that raw_input() is a secure function that converts a user’s input into the proper format so arbitrary code cannot be injected into the program. I utilized this secure alternative to ensure the program was secure from injection. Coding the main menu was straightforward and not too difficult to implement, as I have completed this task in Java and C++ before. 
+
+
 **Artifact Artifact Three Enhanced Code**
 - [Link to full project code](https://github.com/iMcNeW/SNHU_CS499/tree/main/ZooAuthenticationSystem/src/zooauthenticationsystem).
 
@@ -274,7 +281,200 @@ These enhancements were pretty intense, but I completed something very similar i
     <summary><b>Click to view</b></summary>
 
 ```python
+import json
+import pprint
+from bson import json_util
+from pymongo import MongoClient
 
+connection = MongoClient('localhost', 27017)
+db = connection['city']
+collection = db['inspections']
+
+def create_new_document():
+    print("Enter id")
+    id = str(raw_input())
+    print("Enter certificate number")
+    cert = str(raw_input())
+    print("Enter business name")
+    business = str(raw_input())
+    print("Enter date")
+    date = str(raw_input())
+    print("Enter result")
+    result = str(raw_input())
+    print("Enter sector")
+    sector = str(raw_input())
+    print("Enter address")
+    print("Enter city")
+    city = str(raw_input())
+    print("Enter zip")
+    zip = str(raw_input())
+    print("Enter street")
+    street = str(raw_input())
+    print("Enter number")
+    number = str(raw_input())
+    try:
+      inspections_data = {
+        "id" : id,
+        "certificate_number" : cert,
+        "business_name" : business,
+        "date" : date,
+        "result" : result,
+        "sector" : sector,
+        "address" : {
+        "city" : city,
+        "zip" : zip,
+        "street" : street,
+        "number" : number
+        }
+      }
+      result = collection.insert_one(inspections_data)
+      print('Record Succesfully Added: {0}'.format(result.inserted_id))
+      
+      if inspections_data == True:
+        print(False)
+      else:
+        print(True)
+      
+    except ValidationError as ve:
+        abort(400, str(ve))
+        return result
+
+def read_document():
+  try:
+    print("Enter ID")
+    ID = str(raw_input())
+    inspections_data = collection.find_one({"id" : ID})
+    
+    if inspections_data == None:
+        print("Record not found")
+    else:
+        print("Record found\n")
+        print("Current record details for " + ID)
+        pprint.pprint(inspections_data)
+  
+  except ValidationError as ve:
+    abort(400, str(ve))
+    return result
+
+def update_document():
+  print("Enter ID")
+  ID = str(raw_input())
+  print("\nCurrent record details for " + ID)
+  inspections_data = collection.find_one({"id" : ID})
+  pprint.pprint(inspections_data)
+    
+  print("\nWould you like to update this record? (Y or N)")
+  
+  while True:
+    choice = str(raw_input())
+    
+    if choice == "Y":
+      print("Enter certificate number")
+      cert = str(raw_input())
+      print("Enter business name")
+      business = str(raw_input())
+      print("Enter date")
+      date = str(raw_input())
+      print("Enter result")
+      result = str(raw_input())
+      print("Enter sector")
+      sector = str(raw_input())
+      print("Enter address")
+      print("Enter city")
+      city = str(raw_input())
+      print("Enter zip")
+      zip = str(raw_input())
+      print("Enter street")
+      street = str(raw_input())
+      print("Enter number")
+      number = str(raw_input())
+      try:
+        collection.update_one({"id" : ID}, 
+                              {"$set":{"certificate_number" : cert,
+                                       "business_name" : business,
+                                       "date" : date,
+                                       "result" : result,
+                                       "sector" : sector,
+                                       "address" : {
+                                         "city" : city,
+                                         "zip" : zip,
+                                         "street" : street,
+                                         "number" : number}}})
+      
+        inspections_data = collection.find_one({"id" : ID})
+        print("\nUpdated record for " + ID)
+        pprint.pprint(inspections_data)
+        print("Update Succesful\n")
+        break
+        
+      except ValidationError as ve:
+        abort(400, str(ve))
+        return result
+      
+    elif choice == "N":
+      print("Goodbye! Back to the main menu.")
+      break
+      
+    else:
+      print("\nInvalid Selection, enter Y or N!\n")
+
+def delete_document():
+  print("Enter ID")
+  ID = str(raw_input())
+  print("\nCurrent record details for " + ID)
+  inspections_data = collection.find_one({"id" : ID})
+  pprint.pprint(inspections_data)
+    
+  print("\nWould you like to delete this record? (Y or N)")
+  
+  while True:
+    choice = str(raw_input())
+    
+    if choice == "Y":
+      try:
+        if inspections_data == None:
+          print("ID not found. Please try again\n")
+          break
+        else:
+          collection.delete_one({"id" : ID})
+          print("Inspection Data Deleted Succesfully!")
+          break
+
+      except ValidationError as ve:
+        abort(400, str(ve))
+        return result
+
+    elif choice == "N":
+      print("Goodbye! Back to the main menu.")
+      break
+
+    else:
+      print("\nInvalid Selection, enter Y or N!\n")
+
+def mainMenu():
+  while True:
+    selection = str(raw_input(
+      '\nPlease select an option below: '
+      '\n1 Create a new record.'
+      '\n2 Search and display record by id.'
+      '\n3 Update record by id.'
+      '\n4 Delete record by id.'
+      '\n9 Quit\n\n'))
+      
+    if selection == '1':
+      create_new_document()
+    elif selection == '2':
+      read_document()
+    elif selection == '3':
+      update_document()
+    elif selection == '4':
+      delete_document()
+    elif selection == '9':
+      quit()
+    else:
+      print('\nInvalid selection! \n')
+
+mainMenu()
 ```
 </details>
 
