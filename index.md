@@ -32,7 +32,7 @@ To add the functionality that allows a user to re-print their role wasn’t to c
 
 
 <details>
-    <summary><b>Click to view ZooAuthenticationSystem.Java</b></summary>
+    <summary><b>ZooAuthenticationSystem.Java</b></summary>
 
 ```java
 package zooauthenticationsystem;
