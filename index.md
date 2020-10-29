@@ -28,7 +28,7 @@ I chose this artifact because the enhancements I made helped me demonstrate the 
 To add the functionality that allows a user to re-print their role wasn’t to challenging. I had to add an else if to the if else statement inside of the while loop at the end of the program that called the getRole() function if the user typed “role”.  The biggest challenged I faced when enhancing this program was figuring out when and where to close the scanner to fix the resource leak. I tried to close it in a few different places within the code, but the program would eventually crash when it required user input after the scanner was closed. I eventually figured out that if I closed the scanner at the end of the first for loop the program functioned properly and let the user continue to re-print their role or logout if they wish. Improving the comments and straightening up the structure of the code was pretty straightforward and fairly easy to accomplish because I now have a better understanding of coding best practices in regards to naming conventions, comments, and how code should be structured to improve readability and understandability. 
 
 **Artifact One Enhanced Code**
-- [Link to full project code](https://github.com/iMcNeW/SNHU_CS499/tree/main/ZooAuthenticationSystem/src/zooauthenticationsystem).
+- [Link to full project code](https://github.com/iMcNeW/iMcNeW.github.io/tree/master/ZooAuthenticationSystem/src/zooauthenticationsystem).
 
 
 <details>
@@ -253,7 +253,7 @@ These enhancements were pretty intense, but I completed something very similar i
 
 
 **Artifact Two Enhanced Code** 
-- [Link to full project code](https://github.com/iMcNeW/SNHU_CS499/tree/main/ZooAuthenticationSystem/src/zooauthenticationsystem).
+- [Link to full project code](https://github.com/iMcNeW/iMcNeW.github.io/tree/master/ZooAuthenticationSystem/src/zooauthenticationsystem).
 
 <details>
     <summary><b>Click to view</b></summary>
@@ -274,7 +274,7 @@ I chose this artifact because the enhancements I made helped me demonstrate the 
 To enhance this artifact, I successfully converted all four of these programs into one program that has a main menu that gives the user an option to perform CRUD operations on a document of their choosing. The user is able to create their own document, search for a specific document, update specific documents, and delete specific documents using the documents ID. I’d say the most challenging part of this enhancement was actually allowing the user to create and update a document because these two methods were hard coded to perform these operations on a specific document before, all I had to do was run the program. After combining all four programs, I decided the best option was to continually prompt the user to enter the required information, store the input in a variable, then either create or update the document. After some research on Python, I learned that raw_input() is a secure function that converts a user’s input into the proper format so arbitrary code cannot be injected into the program. I utilized this secure alternative to ensure the program was secure from injection. Coding the main menu was straightforward and not too difficult to implement, as I have completed this task in Java and C++ before. 
 
 
-**Artifact Artifact Three Enhanced Code**
+**Artifact Three Enhanced Code**
 - [Link to full project code](https://github.com/iMcNeW/SNHU_CS499/tree/main/ZooAuthenticationSystem/src/zooauthenticationsystem).
 
 <details>
