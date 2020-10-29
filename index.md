@@ -1,7 +1,3 @@
----
-layout: default
----
-
 # Welcome to Joshua McNew's ePortfolio
 
 ## Professional Self-Assessment
