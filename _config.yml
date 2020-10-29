@@ -1,4 +1,7 @@
 theme: jekyll-theme-cayman
+title: Joshua McNew's ePortfolio
+description: CS499 Computer Science Capstone
+
 # SITE CONFIGURATION
 baseurl: ""
 url: "https://iMcNeW.github.io"
