@@ -31,7 +31,7 @@ To add the functionality that allows a user to re-print their role wasn’t to c
 - [Link to full project code](https://github.com/iMcNeW/SNHU_CS499/tree/main/ZooAuthenticationSystem/src/zooauthenticationsystem).
 
 <details>
-<summary>Click to view ZooAuthenticationSystem.Java</summary>
+<summary>Click to view ZooAuthenticationSystem.Java</summary><p>
   
 ```java
 package zooauthenticationsystem;
@@ -176,7 +176,7 @@ public class ZooAuthenticationSystem {
     }
 }
 ```
-</details>
+</p></details>
 
 <details>
 <summary>Click to view ZooUserRoles.Java</summary>
