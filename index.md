@@ -204,7 +204,7 @@ These enhancements were pretty intense, but I completed something very similar i
 - Lysecky, R. (2017, August). CS-260: Data Structures
 
 
-**Artifact Two Enhanced Code**
+**Artifact Two Enhanced Code** 
 - [Link to full project code](https://github.com/iMcNeW/SNHU_CS499/tree/main/ZooAuthenticationSystem/src/zooauthenticationsystem).
 
 ```c++
