@@ -30,6 +30,9 @@ To add the functionality that allows a user to re-print their role wasn’t to c
 **Artifact One Enhanced Code**
 - [Link to full project code](https://github.com/iMcNeW/SNHU_CS499/tree/main/ZooAuthenticationSystem/src/zooauthenticationsystem).
 
+<details>
+    <summary>Click to view ZooAuthenticationSystem.Java</summary>
+  
 ```java
 package zooauthenticationsystem;
 import java.security.MessageDigest;
@@ -173,6 +176,7 @@ public class ZooAuthenticationSystem {
     }
 }
 ```
+</details>
 
 # Artifact Two - Algorithms and Data Structures
 
