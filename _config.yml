@@ -6,4 +6,5 @@ description: CS499 Computer Science Capstone
 baseurl: ""
 url: "https://iMcNeW.github.io"
 markdown: kramdown
-kramdown: parse_block_html: true
+kramdown: true
+parse_block_html: true
