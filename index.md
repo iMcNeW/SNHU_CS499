@@ -196,7 +196,7 @@ class ZooUserRoles {
 
     public String getRole() {  //Switch statement that holds all of the given credentials
         switch (user) {
-            case "Joshua.McNew":
+            case "Joshua.M":
                 role = "author";
                 System.out.println("You are the author of this program, congratulations!\n");
                 break;
