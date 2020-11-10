@@ -35,19 +35,21 @@ To add the functionality that allows a user to re-print their role wasn’t to c
     <summary><b>ZooAuthenticationSystem.Java</b></summary>
 
 ```java
+// Author Joshua McNew
+
 package zooauthenticationsystem;
 import java.security.MessageDigest;
 import java.util.Scanner;
-//Author Joshua McNew
+
 
 public class ZooAuthenticationSystem {
 
     public static void main(String[] args) throws Exception {
         
-	//Initializes scanner 
+    	// Initializes scanner 
         Scanner scan = new Scanner(System.in);
         
-        //An array that accesses credentials "I skipped ahead on Zybooks"
+        // An array that accesses credentials and define variables
         final int credNumber = 8;
         String[] userCred = new String[credNumber];
         String[] passCred = new String[credNumber];
@@ -57,15 +59,16 @@ public class ZooAuthenticationSystem {
         String hashedPass = "";
         String logOut = "";
         
-        //Initialize variables for loop
+        // Initialize variables for loop
         int i = 0;
         int u = 0;
         int user = 0;
         boolean matched = false;
         
+        // Set variable to be used in the ZooUserRoles class
         ZooUserRoles userInput = new ZooUserRoles();
         
-        //Username credentials array
+        // Username credentials array
         userCred[0] = "Joshua.M";
         userCred[1] = "Bethony.M";
         userCred[2] = "griffin.keyes";
@@ -75,7 +78,7 @@ public class ZooAuthenticationSystem {
         userCred[6] = "jerome.grizzlybear";
         userCred[7] = "bruce.grizzlybear";
         
-        //Password credentials array
+        // Password credentials array
         passCred[0] = "5ac5355b84894ede056ab81b324c4675";
         passCred[1] = "2b1973d2105a8e955c9e4a9a6140ceff";
         passCred[2] = "108de81c31bf9c622f76876b74e9285f";
@@ -86,7 +89,7 @@ public class ZooAuthenticationSystem {
         passCred[7] = "0d107d09f5bbe40cade3de5c71e9e9b7";
         
         
-        //Prompts the user for their username and password and allows them to quit at anytime
+        // Prompts the user for their username and password and allows them to quit at anytime
         System.out.println("Welcome, please login!");
         System.out.println("Enter \"quit\" at anytime to exit or type \"logout\" when done.");
         
@@ -106,7 +109,7 @@ public class ZooAuthenticationSystem {
             scan.close();
             return; }
         
-        //For loop that limits attempts to 3 and converts using MD5
+        // For loop that limits login attempts to 3 and converts password using MD5 hash
         for (i = 0; i < 3; ++i) {
 
             for (u = 0; u < credNumber; ++u) {
@@ -126,7 +129,8 @@ public class ZooAuthenticationSystem {
                     hashedPass = sb.toString();    
                 }   
             }
-            //Compares user credentials and exits after 3 attempts
+            
+            // Compares user credentials and exits after 3 unsuccessful login attempts
             if (!hashedPass.equals(passCred[user])) {
                 matched = false;
                 
@@ -150,30 +154,33 @@ public class ZooAuthenticationSystem {
                     System.out.println("Too many failed attempts. Goodbye.");
                     break; }
             }
-            else {
-                userInput.setUser(username); //Sets username to select from role file
-                userInput.getRole(); //Imports role from role file
             
-                //While loop that allows the user to logout
+            // Sets username to select from role file and imports the description
+            else {
+                userInput.setUser(username);
+                userInput.getRole();
+            
+                // While loop that allows the user to logout or reprint their role
                 while (true) {
                     System.out.print("Please Type \"logout\" to exit or \"role\" to reprint user role\n");
                     logOut = scan.nextLine();
                     
-                    
-
                     if (logOut.equals("logout")) {
                         System.out.print("See ya next time, Goodbye!");
-                        return; }
+                        scan.close();
+                        return;
+                    }
                     else if (logOut.equals("role")) {
                     	userInput.getRole();
-                        }
+                    }
                     else {
                     	continue;
                     }
                 }
             }
-            scan.close();
         }
+    // Close scanner to prevent resource leak
+    scan.close();
     }
 }
 ```
@@ -183,18 +190,22 @@ public class ZooAuthenticationSystem {
 <summary><b>ZooUserRoles.Java</b></summary>
 
 ```java
+// Author Joshua McNew
+
 package zooauthenticationsystem;
-//Author Joshua McNew
 
 class ZooUserRoles {
-    private String role; //Creates private Strings role and user
+	
+	// Creates private Strings role and user
+    private String role;
     private String user;
 
     public void setUser(String userInput) {
         user = userInput;
     }
-
-    public String getRole() {  //Switch statement that holds all of the given credentials
+    
+    // Switch statement that holds all of the given credentials
+    public String getRole() {
         switch (user) {
             case "Joshua.M":
                 role = "author";
@@ -228,7 +239,9 @@ class ZooUserRoles {
             default:
                 break; 
         }
-        return role; //Returns matched role
+        
+        // Returns matched role
+        return role;
     }
 }
 ```
