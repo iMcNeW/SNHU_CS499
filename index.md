@@ -23,7 +23,7 @@ The goal of this code review is to explain how the code for each of my chosen ar
 
 The artifact I decided to enhance for the Software Engineering/Design aspect of the ePortfolio is the final project I developed in the IT 145 Foundation in Application Development course I took in January of 2019. This artifact is written in Java and is a Zoo Authentication System that is responsible for displaying the role or job description of an employee, given they have the correct username and password. The program first prompts the user for their username and password. The password is then converted using a message digest five (MD5) hash and validated against the stored hashed password. The user has three attempts to enter the correct credentials, otherwise the program will exit. If the user enters the correct credentials, they will be given access to their correct role and their corresponding role information will be displayed. Finally, the user has an option to log out and exit the program if they wish.
 
-I chose this artifact because the enhancements I made helped me demonstrate the mastery in some of the skills I have learned throughout my journey in this computer science program. I proved my ability to use well-founded/innovative techniques, skills, and tools for the purpose of implementing computer solutions that deliver value and accomplish industry-specific goals. I also demonstrated my ability to mitigate design flaws by exposing and providing solutions to potential security vulnerabilities that could leave the program open for attack or cause memory errors. I certainly met my course objectives for this enhancement because I improved the functionality of this program by adding an extra feature to re-print the user’s role, fixed a resource leak that could lead to memory errors, improved the overall quality of the code by using proper naming conventions, straightening up the structure of the code, and adding sophisticated comments that help explain how the code functions.
+I chose this artifact because the enhancements I made helped me demonstrate the mastery in some of the skills I have learned throughout my journey in this computer science program. I proved my ability to use well-founded/innovative techniques, skills, and tools for the purpose of implementing computer solutions that deliver value and accomplish industry-specific goals. I also demonstrated my ability to mitigate design flaws by exposing and providing solutions to potential security vulnerabilities that could leave the program open for attack or cause memory errors. I certainly met my course objectives for this enhancement because I improved the functionality of this program by adding an extra feature to re-print the user’s role, fixed a resource leak that could lead to memory errors, improved the overall quality of the code by using proper naming conventions, straightening up the structure of the code, and adding sophisticated comments that help explain how the code functions. Going forward I would like to remove the password and username credentials out of the program and into a separate file to increase the overall security of the program.
 
 To add the functionality that allows a user to re-print their role wasn’t to challenging. I had to add an else if to the if else statement inside of the while loop at the end of the program that called the getRole() function if the user typed “role”.  The biggest challenged I faced when enhancing this program was figuring out when and where to close the scanner to fix the resource leak. I tried to close it in a few different places within the code, but the program would eventually crash when it required user input after the scanner was closed. I eventually figured out that if I closed the scanner at the end of the first for loop the program functioned properly and let the user continue to re-print their role or logout if they wish. Improving the comments and straightening up the structure of the code was pretty straightforward and fairly easy to accomplish because I now have a better understanding of coding best practices in regards to naming conventions, comments, and how code should be structured to improve readability and understandability. 
 
@@ -179,6 +179,7 @@ public class ZooAuthenticationSystem {
                 }
             }
         }
+    
     // Close scanner to prevent resource leak
     scan.close();
     }
@@ -196,7 +197,7 @@ package zooauthenticationsystem;
 
 class ZooUserRoles {
 	
-	// Creates private Strings role and user
+    // Creates private Strings role and user
     private String role;
     private String user;
 
@@ -240,8 +241,8 @@ class ZooUserRoles {
                 break; 
         }
         
-        // Returns matched role
-        return role;
+    // Returns matched role
+    return role;
     }
 }
 ```
