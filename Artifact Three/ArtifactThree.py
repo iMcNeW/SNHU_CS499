@@ -3,59 +3,62 @@ import pprint
 from bson import json_util
 from pymongo import MongoClient
 
+# Establish connection to MongoClient to utilize MongoDB
 connection = MongoClient('localhost', 27017)
 db = connection['city']
 collection = db['inspections']
 
+# Create operation - Allows you to create a new document
 def create_new_document():
-    print("Enter id")
-    id = str(raw_input())
-    print("Enter certificate number")
-    cert = str(raw_input())
-    print("Enter business name")
-    business = str(raw_input())
-    print("Enter date")
-    date = str(raw_input())
-    print("Enter result")
-    result = str(raw_input())
-    print("Enter sector")
-    sector = str(raw_input())
-    print("Enter address")
-    print("Enter city")
-    city = str(raw_input())
-    print("Enter zip")
-    zip = str(raw_input())
-    print("Enter street")
-    street = str(raw_input())
-    print("Enter number")
-    number = str(raw_input())
-    try:
-      inspections_data = {
-        "id" : id,
-        "certificate_number" : cert,
-        "business_name" : business,
-        "date" : date,
-        "result" : result,
-        "sector" : sector,
-        "address" : {
-        "city" : city,
-        "zip" : zip,
-        "street" : street,
-        "number" : number
-        }
+  print("Enter id")
+  id = str(raw_input())
+  print("Enter certificate number")
+  cert = str(raw_input())
+  print("Enter business name")
+  business = str(raw_input())
+  print("Enter date")
+  date = str(raw_input())
+  print("Enter result")
+  result = str(raw_input())
+  print("Enter sector")
+  sector = str(raw_input())
+  print("Enter address")
+  print("Enter city")
+  city = str(raw_input())
+  print("Enter zip")
+  zip = str(raw_input())
+  print("Enter street")
+  street = str(raw_input())
+  print("Enter number")
+  number = str(raw_input())
+  try:
+    inspections_data = {
+      "id" : id,
+      "certificate_number" : cert,
+      "business_name" : business,
+      "date" : date,
+      "result" : result,
+      "sector" : sector,
+      "address" : {
+      "city" : city,
+      "zip" : zip,
+      "street" : street,
+      "number" : number
       }
-      result = collection.insert_one(inspections_data)
-      print('Record Succesfully Added: {0}'.format(result.inserted_id))
-      
-      if inspections_data == True:
-        print(False)
-      else:
-        print(True)
-      
-    except ValidationError as ve:
-        abort(400, str(ve))
-        return result
+    }
+    result = collection.insert_one(inspections_data)
+    print('Record Succesfully Added: {0}'.format(result.inserted_id))
+    
+    if inspections_data == True:
+      print(False)
+    else:
+      print(True)
+    
+  except ValidationError as ve:
+      abort(400, str(ve))
+      return result
 
+# Read operation - Allows you to search and display a document
 def read_document():
   try:
     print("Enter ID")
@@ -73,6 +76,7 @@ def read_document():
     abort(400, str(ve))
     return result
 
+# Update operation - Allows you to update an existing document
 def update_document():
   print("Enter ID")
   ID = str(raw_input())
@@ -135,6 +139,7 @@ def update_document():
     else:
       print("\nInvalid Selection, enter Y or N!\n")
 
+# Delete operation - Allows you to delete an existing document
 def delete_document():
   print("Enter ID")
   ID = str(raw_input())
@@ -168,6 +173,7 @@ def delete_document():
     else:
       print("\nInvalid Selection, enter Y or N!\n")
 
+# Main menu - Allows a user to choose one of the CRUD operations
 def mainMenu():
   while True:
     selection = str(raw_input(
