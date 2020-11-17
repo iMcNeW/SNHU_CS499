@@ -24,7 +24,7 @@ using namespace std;
 class LinkedList {
 
 private:
-    //Internal structure for list entries, housekeeping variables
+    // Internal structure for list entries, housekeeping variables
 
 	// Declares the Bid struct and the Node pointer is set to next
 	struct Node {
@@ -85,7 +85,7 @@ void LinkedList::Append(Bid bid) {
 	size++;
 }
 
-//Prepend a new bid to the start of the list
+// Prepend a new bid to the start of the list
 void LinkedList::Prepend(Bid bid) {
     // Prepend logic
 	Node* prependNode = new Node(bid);

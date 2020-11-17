@@ -135,7 +135,7 @@ Node* BinarySearchTree::removeNode(Node *node, string bidId) {
 // Search for a bid
 Bid BinarySearchTree::Search() {
     // Implement logic to search the tree for a bid
-	//Search starts from the root of the tree
+	// Search starts from the root of the tree
 	string bidId;
 	cout << "Enter the id for to search for a bid. (97985) " << endl;
 	cin >> bidId;
@@ -165,7 +165,7 @@ Bid BinarySearchTree::Search() {
  */
 void BinarySearchTree::addNode(Node* node, Bid bid) {
     // Implement logic to insert a bid into the tree
-	//If bid is smaller add to the left
+	// If bid is smaller add to the left
 	if (node->bid.bidId.compare(bid.bidId) > 0) {
 		if(node->left == nullptr) {
 			node->left = new Node(bid);
@@ -249,7 +249,7 @@ void loadBids(BinarySearchTree* bst) {
     }
 }
 
-//The one and only main() method - Display menu and switch case statement
+// The one and only main() method - Display menu and switch case statement
 int binaryMain() {
 
     // Define a timer variable
