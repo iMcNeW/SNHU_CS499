@@ -40,7 +40,7 @@ To add the functionality that allows a user to re-print their role wasn’t to c
 
 
 <details>
-    <summary><b>ZooAuthenticationSystem.Java</b></summary>
+    <summary><b>ZooAuthenticationSystem.Java (click to view)</b></summary>
 
 ```java
 // Author Joshua McNew
@@ -196,7 +196,7 @@ public class ZooAuthenticationSystem {
 </details>
 
 <details>
-<summary><b>ZooUserRoles.Java</b></summary>
+<summary><b>ZooUserRoles.Java (click to view)</b></summary>
 
 ```java
 // Author Joshua McNew
@@ -278,7 +278,7 @@ These enhancements were pretty intense, but I completed something very similar i
 - Please view full program. [Link to full project code](https://github.com/iMcNeW/iMcNeW.github.io/tree/master/Artifact%20Two/src).
 
 <details>
-    <summary><b>Artifact2.cpp</b></summary>
+    <summary><b>Artifact2.cpp (click to view)</b></summary>
 
 ```c++
 //============================================================================
@@ -348,7 +348,7 @@ return 0;
 </details>
 
 <details>
-    <summary><b>Artifact2.hpp</b></summary>
+    <summary><b>Artifact2.hpp (click to view)</b></summary>
 
 ```c++
 //============================================================================
@@ -460,7 +460,7 @@ To enhance this artifact, I successfully converted all four of these programs in
 - [Link to full project code](https://github.com/iMcNeW/iMcNeW.github.io/tree/master/Artifact%20Three).
 
 <details>
-    <summary><b>Click to view</b></summary>
+    <summary><b>ArtifactThree.py (click to view)</b></summary>
 
 ```python
 import json
