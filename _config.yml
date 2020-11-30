@@ -6,3 +6,4 @@ description: CS499 Computer Science Capstone
 baseurl: ""
 url: "https://iMcNeW.github.io"
 markdown: CommonMarkGhPages
+video : true
