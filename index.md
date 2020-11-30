@@ -23,7 +23,7 @@ The following artifacts and their accompanying narratives will demonstrate my co
 
 ## Code Review
 The goal of this code review is to explain how the code for each of my chosen artifact's function as well as how and why I plan to enhance them.
-- [Code Review](www.test.com).
+- [Click to view Code Review](https://youtu.be/kx_hbfEpFe0).
 
 # Artifact One - Software Design and Engineering
 
